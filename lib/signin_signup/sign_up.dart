@@ -260,7 +260,8 @@ class _SignUpState extends State<SignUp> {
                                       await user.user.sendEmailVerification();
 
                                       Fluttertoast.showToast(
-                                          msg: "Email is not verified",
+                                          msg:
+                                              "we sent the email , plese check your email ",
                                           toastLength: Toast.LENGTH_SHORT,
                                           gravity: ToastGravity.BOTTOM,
                                           timeInSecForIosWeb: 1,

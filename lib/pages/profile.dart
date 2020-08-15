@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebaseusers/pages/profile_edit.dart';
-import 'package:firebaseusers/signin_signup/change_password.dart';
+import 'package:firebaseusers/pages/img_edit.dart';
 import 'package:firebaseusers/signin_signup/sign_in.dart';
 import 'package:flutter/material.dart';
 

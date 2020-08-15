@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebaseusers/pages/profile.dart';
+import 'package:firebaseusers/pages/main_screen.dart';
 import 'package:firebaseusers/signin_signup/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -229,7 +229,8 @@ class _SignInState extends State<SignIn> {
                                       Navigator.pushReplacement(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => Profile()));
+                                              builder: (context) =>
+                                                  MainScreen()));
                                     } else {
                                       await user.user.sendEmailVerification();
                                       Fluttertoast.showToast(

@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebaseusers/signin_signup/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -108,6 +109,10 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                                       backgroundColor: Colors.red,
                                       textColor: Colors.white,
                                       fontSize: 16.0);
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => SignIn()));
                                 } catch (e) {
                                   if (e
                                       .toString()
@@ -121,7 +126,6 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                                         backgroundColor: Colors.red,
                                         textColor: Colors.white,
                                         fontSize: 16.0);
-                                  print(e);
                                 }
                               },
                             ),
