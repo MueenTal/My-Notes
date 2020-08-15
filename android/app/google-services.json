@@ -1,0 +1,40 @@
+{
+    "project_info": {
+      "project_number": "233363505835",
+      "firebase_url": "https://my-notes-8c571.firebaseio.com",
+      "project_id": "my-notes-8c571",
+      "storage_bucket": "my-notes-8c571.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:233363505835:android:cc5a6067a31f67fea6adee",
+          "android_client_info": {
+            "package_name": "com.talapps.mynotes"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "233363505835-i9lb0l6b1d4ebn0vob7ie7ar2b449lv4.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSyCNjCHBNiH7-QXexSPeJIJjh2zfHZ5WbzY"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": [
+              {
+                "client_id": "233363505835-i9lb0l6b1d4ebn0vob7ie7ar2b449lv4.apps.googleusercontent.com",
+                "client_type": 3
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }
