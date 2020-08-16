@@ -30,23 +30,34 @@ class _AddState extends State<Add> {
       floatingActionButton: FloatingActionButton.extended(
           label: Text("Add Note "),
           onPressed: () async {
-            await Firestore.instance.collection('Notes').document().setData({
-              'name': _title.text,
-              'text': _text.text,
-              'date': DateTime.now().toString(),
-              'id': user.uid.toString()
-            });
+            if (_text.text.isEmpty || _title.text.isEmpty) {
+              Fluttertoast.showToast(
+                  msg: "you must enter title and text",
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.BOTTOM,
+                  timeInSecForIosWeb: 1,
+                  backgroundColor: Colors.red,
+                  textColor: Colors.white,
+                  fontSize: 16.0);
+            } else {
+              await Firestore.instance.collection('Notes').document().setData({
+                'name': _title.text,
+                'text': _text.text,
+                'date': DateTime.now().toString(),
+                'id': user.uid.toString()
+              });
 
-            Fluttertoast.showToast(
-                msg: "The note was aded",
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.BOTTOM,
-                timeInSecForIosWeb: 1,
-                backgroundColor: Colors.red,
-                textColor: Colors.white,
-                fontSize: 16.0);
-            Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => MainScreen()));
+              Fluttertoast.showToast(
+                  msg: "The note was aded",
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.BOTTOM,
+                  timeInSecForIosWeb: 1,
+                  backgroundColor: Colors.red,
+                  textColor: Colors.white,
+                  fontSize: 16.0);
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => MainScreen()));
+            }
           },
           backgroundColor: Colors.pink,
           icon: Icon(Icons.add)),

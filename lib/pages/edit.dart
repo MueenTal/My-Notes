@@ -5,6 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class Edit extends StatefulWidget {
+  String title;
+  String text;
+  String documntId;
+
+  Edit({
+    @required this.title,
+    @required this.text,
+    @required this.documntId,
+  });
+
   @override
   _EditState createState() => _EditState();
 }
@@ -30,11 +40,13 @@ class _EditState extends State<Edit> {
       floatingActionButton: FloatingActionButton.extended(
           label: Text("Edit Note "),
           onPressed: () async {
-            await Firestore.instance.collection('Notes').document().setData({
+            await Firestore.instance
+                .collection('Notes')
+                .document(widget.documntId)
+                .updateData({
               'name': _title.text,
               'text': _text.text,
               'date': DateTime.now().toString(),
-              'id': user.uid.toString()
             });
 
             Fluttertoast.showToast(

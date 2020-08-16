@@ -84,7 +84,9 @@ class _MainScreenState extends State<MainScreen> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Edit()));
+                                          builder: (context) => Edit(
+                                                documntId: document.documentID,
+                                              )));
                                 },
                                 title: new Text(document['name']),
                                 subtitle:
@@ -94,7 +96,12 @@ class _MainScreenState extends State<MainScreen> {
                                       Icons.delete,
                                       color: Colors.redAccent,
                                     ),
-                                    onPressed: null),
+                                    onPressed: () {
+                                      Firestore.instance
+                                          .collection("Notes")
+                                          .document(document.documentID)
+                                          .delete();
+                                    }),
                               ),
                               Divider(
                                 color: Colors.redAccent,
